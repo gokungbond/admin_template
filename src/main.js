@@ -5,6 +5,7 @@ import router from './router'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { ServerTable } from 'v-tables-3';
 
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -19,6 +20,8 @@ import { faUserSecret, faBars, faPowerOff, faChevronLeft, faXmark, faCircle, faM
 library.add(faUserSecret, faBars, faPowerOff, faChevronLeft, faXmark, faCircle, faMagnifyingGlass, faAngleRight, faUser, faUsers, faPeopleGroup, faPersonWalkingArrowRight, faPersonCirclePlus, faPersonDigging, faPersonChalkboard, faPeopleCarryBox)
 
 const app = createApp(App)
+
+app.use(ServerTable, {}, 'bootstrap4')
 
 app.use(createPinia())
 app.use(router)
